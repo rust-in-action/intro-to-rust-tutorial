@@ -6,14 +6,18 @@ use l_systems::System;
 
 fn main() {
     let mut turtle = Turtle::new();
-    println!("Hello, world!");
 
+    // Distance to move forward
     let mut d = 6.0;
+    
+    // Number of iterations
     let n = 5;
 
-//   let mut system = l_systems::known_patterns::koch_island();
+    // If you look in lib.rs, you'll see several pre-built patterns.
+    // Feel free to have a dig around and look for them.
+    // 
+    //   let mut system = l_systems::known_patterns::koch_island();
     let mut system = l_systems::known_patterns::tree_f();
-    // let mut system = l_systems::known_patterns::hex_gosper_curve();
     for _ in 0..n {
         system.apply_rules();
     }
@@ -26,13 +30,11 @@ fn main() {
         d = 0.5*d;
         println!("{:?}", system.rules);
         println!("{:?}", system.axiom);
-//        system.apply_rules();
         turtle.pen_up();
         turtle.go_to(start);
         turtle.pen_down();
         turtle.set_pen_color("#222222");
         // turtle.set_pen_color(random::<Color>().with_alpha((1.0/i as f64).clamp(0.0, 1.0)));
-
 
         let mut stack: Vec<(turtle::Point, turtle::Angle)> = vec![];
         for step in system.axiom.chars() {
@@ -54,20 +56,6 @@ fn main() {
         }
 
         turtle.drawing().save_svg("lsystem.svg");
-//
-//
-//        for _ in 0..6 {
-//            for step in system.axiom.chars() {
-//                match step {
-//                    'F' => turtle.forward(d),
-//                    'f' => { turtle.pen_up(); turtle.forward(d); turtle.pen_down() },
-//                    '-' | '−' => turtle.right(system.turn_angle.into()),
-//                    '+' => turtle.left(system.turn_angle.into()),
-//                    _ => println!("skip: {}", step),
-//                }
-//            }
-//            turtle.right(15.into());
-//        }
     }
 
 }
