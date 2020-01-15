@@ -1,0 +1,10 @@
+[package]
+name = "lsystems_interpreter1"
+version = "0.1.0"
+authors = ["Tim McNamara <tsm@canonical.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+turtle = "1.0.0-rc.3"
