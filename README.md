@@ -1,6 +1,6 @@
 # intro-to-rust-tutorial
 
-An interactive tutorial for programmers who have never used a compiler. Presented at [LCA2020](https://linux.conf.au/schedule/presentation/89/). 
+An interactive tutorial for programmers who have never used a compiler. Presented at [LCA2020](https://lca2020.linux.org.au/schedule/presentation/89/). 
 
 
 ## Abstract
